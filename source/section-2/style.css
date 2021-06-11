@@ -1,0 +1,30 @@
+/*
+ * Do not touch the code in this file.
+ * It is made for styling the index page.
+ */
+
+* {
+    color: #C0C0C0;
+}
+
+body {
+    background-color: #111111;
+}
+
+body #notice {
+    color: red;
+    font-weight: bold;
+}
+
+body #title {
+    text-shadow: 1px 1px #E18499;
+    color: #333333;
+}
+
+body #title .title {
+    color: #777777;
+}
+
+body #content #description {
+    padding-top: 100px;
+}

@@ -1,0 +1,35 @@
+/*
+ * Do not touch the code in this file.
+ * It is made for styling the index page.
+ */
+
+* {
+    color: #C0C0C0;
+}
+
+body {
+    background-color: #111111;
+}
+
+body #data th, body #data td {
+    padding: 10px;
+    border: 2px solid #C0C0C0;
+    border-radius: 5px;
+}
+
+body #data th {
+    color: #E18499;
+}
+
+body #data td a {
+    text-decoration: none;
+}
+
+body #data td a:hover {
+    text-decoration: underline;
+    color: #E18499;
+}
+
+body #data td a:after {
+    content: "🔗"
+}
