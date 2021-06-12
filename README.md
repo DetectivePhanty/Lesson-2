@@ -2,31 +2,36 @@
 
 ## Table of contents
 * ❯❯ Lesson 2
-    * ❯❯ [Table of contents]()
-    * ❯❯ [Goals]()
-    * ❯❯ [⚠️ Notices (Please Read)]()
-    * ❯❯ [Section 1 - Introduction to HTML DIVs and JavaScript]()
-        * ❯❯ [Breakdown]()
-        * ❯❯ [Void elements]()
-        * ❯❯ [HTML DIVs]()
-        * ❯❯ [IDs and Classes]()
-        * ❯❯ [Combining everything in Section 1]()
-    * ❯❯ [Section 2 - Make a HTML application with the usage of only HTML and JS and removing CSS]()
-        * ❯❯ [About]()
-    * ❯❯ [Section 3 - Make a HTML application with a JS integration and learning the abilites of CSS styling]()
-    * ❯❯ [Guides]()
-        * ❯❯ [How to fork a repo]()
-        * ❯❯ [How to clone a repo]()
-        * ❯❯ [How to install Visual Studio Code]()
-        * ❯❯ [How to install GitHub Desktop]()
-        * ❯❯ [How to install GIT]()
+    * ❯❯ [Table of contents](#table-of-contents)
+    * ❯❯ [Goals](#goals)
+    * ❯❯ [⚠️ Notices (Please Read)](#%EF%B8%8F-notices)
+    * ❯❯ [Section 1 - Introduction to HTML DIVs and JavaScript](#section-1)
+        * ❯❯ [Breakdown](#breakdown)
+        * ❯❯ [Void elements](#void-elements)
+        * ❯❯ [HTML DIVs](#html-divs)
+        * ❯❯ [IDs and Classes](#ids-and-classes)
+        * ❯❯ [Combining everything in Section 1](#combining-everything-in-section-1)
+    * ❯❯ [Section 2 - Make a HTML application with the usage of only HTML and JS and learning the abilites of CSS styling](#section-2)
+        * ❯❯ [About](#about)
+        * ❯❯ [JavaScript code snippets](#javascript-code-snippets)
+        * ❯❯ [Styling the elements](#styling-the-elements)
+        * ❯❯ [Styling with CSS](#styling-with-css)
+        * ❯❯ [Styling with JavaScript](#styling-with-javascript)
+    * ❯❯ [Section 3 - Make a HTML application with a JS integration](#section-3)
+    * ❯❯ [Guides](#guides)
+        * ❯❯ [How to fork a repo](#how-to-fork-a-repo)
+        * ❯❯ [How to clone a repo](#how-to-clone-a-repo)
+        * ❯❯ [How to open a cloned folder in Visual Studio Code](#how-to-open-a-cloned-folder-in-visual-studio-code)
+        * ❯❯ [How to install Visual Studio Code](#how-to-install-visual-studio-code)
+        * ❯❯ [How to install GitHub Desktop](#how-to-install-github-desktop)
+        * ❯❯ [How to install GIT](#how-to-install-git)
 
 
 
 ## Goals
-#### ❯ [Introduction to HTML DIVs and JavaScript.]()
-#### ❯ [Make a HTML application with the usage of only HTML and JS and removing CSS.]()
-#### ❯ [Make a HTML application with a JS integration and learning the abilites of CSS styling.]()
+#### ❯ [Introduction to HTML DIVs and JavaScript.](#section-1)
+#### ❯ [Make a HTML application with the usage of only HTML and JS and learning the abilites of CSS styling.](#section-2)
+#### ❯ [Make a HTML application with a JS integration and learning the abilites of CSS styling.](#section-3)
 
 ## ⚠️ Notices
 This lesson involves lots of basic HTML, CSS, and JS concepts. If any of this lesson feels difficult or incomprehendable, DM me on Discord ([Kurasad#2521](https://discord.com/users/476812566530883604)) and I will be happy to help.
@@ -110,7 +115,7 @@ body #title .title { ... }
 Case 1 states that any element with a class `title` should use its styles. Case 2 states that any element with the ID `message` located inside an element with an ID `title` should use its styles. Case 3 states that any element with the class `title` inside an element with and ID `title` inside a tag `body` should use its styles. In most scenerios Case 2 will be most helpful, Case 1 is mainly for when you want to make all specific elements on a page share styles. Case 3 is more descriptive of the path to the required element but Case 2 is sufficent in providing the required path. Note that every element does not require an ID to function, only ones you wish to uniquely identify in order to modify.
 
 ### Combining everything in Section 1
-Lets make an example combining everything we have covered so far. If you have not done this already, [fork this repo]() and [clone it to your local](), then open [open the repo in Visual Studio Code](). Let's first copy over the code from the following codeblock into the body tag of the `index.html` located in `./source/section-1/index.html`. 
+Lets make an example combining everything we have covered so far. If you have not done this already, [fork this repo](#how-to-fork-a-repo) and [clone it to your local](#how-to-clone-a-repo), then open [open the repo in Visual Studio Code](#how-to-open-a-cloned-folder-in-visual-studio-code). Let's first copy over the code from the following codeblock into the body tag of the `index.html` located in [`./source/section-1/index.html`](source/section-1/index.html). 
 ```html
 <a id="notice"> Page under construction. </a>
 
@@ -153,7 +158,7 @@ If you were able to do it your code should look like the following:
 ```
 
 ## Section 2
-### ❯❯ Make a HTML application with the usage of only HTML and JS and removing CSS
+### ❯❯ Make a HTML application with the usage of only HTML and JS  and learning the abilites of CSS styling
 <hr />
 
 #### About
@@ -203,7 +208,7 @@ console.log(obj.y) // { z: 2 }
 console.log(obj.y.z) // 2
 ```
 
-##### WebJS element grabber.
+##### WebJS element grabber
 ```html
 <body>
     <a id="msg">Hello</a>
@@ -251,9 +256,91 @@ console.log(obj.y.z) // 2
 </body>
 ```
 
-#### Styling the elements.
+#### Styling the elements
 
-As seen in the [WebJS element grabber code snippet]()
+As seen in the [WebJS element grabber code snippet](#webjs-element-grabber) all elements can be accessed from the global `document` variable, including the content of the element, styles, and its children if they exist. In this case `element` represents the fetched element. To access the element's inner data you can use `element.innerHTML` and this will return a string of the data inside the tag. TO access the element's styles you can use `element.style` and any sub-property is a style of the element. To fetch an element inside a specific parent we can use the following code:
+```js
+let parent = document.getElementById(`ELEMENT_ID`)
+let child = parent.getElementById(`ELEMENT_ID`)
+// child is now an element that is searched in the scope of parent.
+
+// Inline:
+let element = document.getElementById(`ELEMENT_ID`).getElementById(`ELEMENT_ID`)
+```
+
+#### Styling with CSS
+
+CSS has many styles you can use on an element, styles defined at a closer scope override elements in a bigger scope. And elements styles using an ID override a styles using classes. Using a `!important` parameter for element styles override all other styles disregarding the scope. Below are some common CSS styles and what they do. Use the following HTML as reference.
+```html
+<div id="element" class="parent">
+    <p id="text" class="child"> Hi </p>
+</div>
+```
+```css
+/* All styles inside this type of CSS style block will be modifing all elements, disregarding they require/use the property. */
+* {
+    color: #00FF00;
+}
+
+#element {
+    /* Padding for the whole element. */
+    padding: 10px;
+
+    /* Padding with speicfied fields. 10px for top/bottom, 5px for left/right */
+    padding: 10px 5px;
+
+    /* Padding with specified sides. 10px for top, 5px for right, 20px for bottom, 7px for left. */
+    padding: 10px 5px 20px 7px;
+
+    /* In the cases above the last style will override the first two, not because it is the most detailed, but because it appears last. */
+}
+
+.child {
+    /* White text color. */
+    color: #000000; 
+}
+
+/* Any style found here will override any styles in 'child' class styles. */
+#text {
+    /* Red text color. */
+    color: #FF0000;
+}
+```
+#### `padding`: Padding around an element's content, moves the edge of the div/area farther from the content. (Content based)
+#### `margin`: Margin of the content from the border of the div/area. (div/area based)
+#### `color`: The text color of the element's content.
+#### `background`: The background style. (Image, Color)
+#### `text-shadow`: The shadow distance and color for text.
+#### `font-weight`: The weight of the font, increases in increments of 100, above 800 is bold.
+
+### Styling with JavaScript
+
+If you open the `style.css` located in the path [`./source/section-2/style.css`](source/section-2/style.css) has all the styles for the site. Now we will remake each code style using JavaScript.
+
+First let's start of with the first style block:
+```css
+* {
+    color: #C0C0C0;
+}
+```
+This states that all elements should have a default text color of `#C0C0C0`. When translated to JavaScript we can just edit the style of the `<html>` tag, hence doing the same action as the CSS block. When translating from CSS to JS for styles we can see that some CSS styles contain a `-` character. This is not vaild in JavaScript since `style.font-weight` would cause an error, we would have to translate it to look like `style.fontWeight`.
+```js
+document.getElementsByTagName(`html`)[0].style.color = `#C0C0C0`;
+```
+When you open the file you will see that there is no element styling, this is something you will do with the JavaScript as the CSS has been nullified. Below is what you should see on the default file:
+
+![Styling with JavaScript - Default](assets/section-2-default.png)
+
+After getting a touch on this concept practice by converting all other element styles from CSS to JavaScript. Add all your JavaScript code to the [`./source/section-2/script.js`](source/section-2/script.js) file. If you are editing multiple styles for a single element declare the element fetch to a variable and edit the styles for the element through the variable. Notice that you will mostly be using up to three fetch types.
+```js
+document.getElementById(`ID`) // Type: Object.
+document.getElementsByTagName(`TAG`) // Type: Array of Objects.
+document.getElementsByClassName(`CLASS`) // Type: Array of Objects.
+```
+
+If you properly get all elements re-styled in JavaScript your page should look like this:
+
+![Styling with JavaScript - Final](assets/section-2-final.png)
 
 ## Guides
 These guides exist to help understand how some functions of this project work.
@@ -266,13 +353,13 @@ These guides exist to help understand how some functions of this project work.
 
 ### How to clone a repo
 #### Updated: 06/11/2021
-#### Pre-req: [GitHub Account](https://github.com/login), [GitHub Desktop](https://desktop.github.com/), [Visual Studio Code](https://code.visualstudio.com/download) (Optional), [GIT](https://git-scm.com/downloads)
+#### Pre-req: [GitHub Account](https://github.com/login), [GitHub Desktop](#how-to-install-github-desktop), [Visual Studio Code](#how-to-install-visual-studio-code) (Optional), [GIT](#how-to-install-git)
 #### About: This guide will explain how to clone a repo from GitHub to your local system.
 <hr />
 
 ### How to open a cloned folder in Visual Studio Code
 #### Updated: 06/11/2021
-#### Pre-req: [Visual Studio Code](https://code.visualstudio.com/download)
+#### Pre-req: [Visual Studio Code](#how-to-install-visual-studio-code)
 #### About: This guide will explain how to clone a repo from GitHub to your local system.
 <hr />
 
@@ -330,4 +417,4 @@ Click finish to open Visual Studio Code.
 #### About: This guide will explain how to install the GIT service to your system.
 <hr />
 
-[Back to top ⬆️]()
+[Back to top ⬆️](#lesson-2---understanding-what-we-are-doing)

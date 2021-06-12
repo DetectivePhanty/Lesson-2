@@ -3,13 +3,19 @@
  * It is made for styling the index page.
  */
 
+/* All element styles */
+
 * {
     color: #C0C0C0;
 }
 
+/* Body tag styles. */
+
 body {
-    background-color: #111111;
+    background: #111111;
 }
+
+/* 'a' tag styles. */
 
 body #notice {
     color: red;
@@ -19,6 +25,8 @@ body #notice {
     align-items: center;
 }
 
+/* Title section styles. */
+
 body #title {
     display: flex;
     justify-content: center;
@@ -27,9 +35,13 @@ body #title {
     color: #333333;
 }
 
+/* 'h1' tag styles. */
+
 body #title .title {
     color: #777777;
 }
+
+/* Description section styles. */
 
 body #content #description {
     padding-top: 100px;
@@ -37,6 +49,8 @@ body #content #description {
     justify-content: center;
     align-items: center;
 }
+
+/* 'img' tag styles. */
 
 body #content #logo {
     display: flex;
