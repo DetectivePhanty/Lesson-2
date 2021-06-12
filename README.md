@@ -31,7 +31,7 @@
 ## Goals
 #### ❯ [Introduction to HTML DIVs and JavaScript.](#section-1)
 #### ❯ [Make a HTML application with the use of JS styling and learning the abilites of CSS styling.](#section-2)
-#### ❯ [Make a HTML application with a JS integration and learning the abilites of CSS styling.](#section-3)
+#### ❯ [Make a HTML application with a JS integration.](#section-3)
 
 ## ⚠️ Notices
 This lesson involves lots of basic HTML, CSS, and JS concepts. If any of this lesson feels difficult or incomprehendable, DM me on Discord ([Kurasad#2521](https://discord.com/users/476812566530883604)) and I will be happy to help.
@@ -158,7 +158,7 @@ If you were able to do it your code should look like the following:
 ```
 
 ## Section 2
-### ❯❯ Make a HTML application with the usage of only HTML and JS  and learning the abilites of CSS styling
+### ❯❯ Make a HTML application with the use of JS styling and learning the abilites of CSS styling
 <hr />
 
 #### About
@@ -177,6 +177,32 @@ for (let item of array ) { ... }
 
 // While loop.
 while (elem === true) { ... } 
+```
+
+##### If-statements
+```js
+let x = 5
+
+// This is a full if-statement.
+if (x === 2) {
+    // Do this.
+} else if (x === 4) {
+    // Do this.
+} else {
+    // Do this.
+}
+
+// Inline if-statement.
+let y = x === 5 ? true : false
+
+// The inline statement converts the follwing:
+let y
+if (x === 5) {
+    y = true
+} else {
+    y = false
+}
+
 ```
 
 ##### Variables
@@ -342,8 +368,184 @@ If you properly get all elements re-styled in JavaScript your page should look l
 
 ![Styling with JavaScript - Final](assets/section_2_final.png)
 
+## Section 3
+### ❯❯ Make a HTML application with a JS integration
+<hr />
+
+JavaScript can also be used to integrate external services. If you wanted to add weather to your website, a google maps location picker, or any other feature, you would likely need JS. Once you learn JavaScript and how it functions it gets pretty simple to make programs with it. A simple program that show's the ability would be an API request. So lets make a program with an API request. But before we do so need to cover some more topics.
+
+#### HTML Tables & Grids
+Tables and grids are a part of HTML that is used to organize data. Tables exist within an DIV and organize text and images. Grids are made with DIVs and CSS, the DIVs will be organized automatically according to what the CSS states. Grids can organize sections of data, combine data, and reorder elements on the page with ease.
+
+Below is the code example of a table:
+```html
+<table>
+    <tr>
+        <th> Heading </th>
+    </tr>
+    <tr>
+        <td> Data </td>
+    </tr>
+<table>
+<!-- Styles not provided. -->
+```
+The output would be 2 cells that look like the following:
+| Heading |
+| ------- |
+| Data    |
+
+The table is defined with the `<table>` tag, the `<tr>` tag defines a new row on the table. The more elements that exist within a row create a column. EX: 
+```html
+<table>
+    <tr>
+        <th> Heading </th>
+        <th> Body </th>
+        <th> About </th>
+    </tr>
+    <tr>
+        <td> Data </td>
+        <td> Item2 </td>
+        <td> None </td>
+    </tr>
+<table>
+<!-- Styles not provided. -->
+```
+The three `<th>` tag represent three columns on the table. The `<th>` tag represents a header tag, this is a cell on a table that is bolded since it labels the data that the table contains and does not contain the table data. The `<td>` tag represents data in a cell, usually text or images, this tag is where the table's data is found. The `<th>` is optional when making a table.
+
+The grid styles will be covered in the next lesson.
+
+#### JavaScript functions
+
+JavaScript has functions for repretitive or complex tasks. A function is a block of code that runs when called or when its test case is true, otherwise it does not run. Functions exist to make repetitive tasks easier or to break down large actions into smaller pieces. The syntax for a JavaScript function is the following:
+```js
+function name(params) {
+    // Code here.
+}
+
+let name = (params) => {
+    // Code here.
+}
+```
+The function is defined by the word `function`, the `name` of the function is what you will use to call the function. The `params` are data that is passed into the function so it can use them to complete its task. The second statement is a function declared to a variable, the format is similar and functions the same, but in this case the variable has to be declared before it is used. Also, Parameteres are optional when declaring a function but are useful for when the function cannot access the data. Functions can reuturn data back to the calling statement. EX:
+```js
+let x = add(4, 5) // Function called here, returned: 9.
+
+function add(x, y) {
+    let z = x + y // Function logic here.
+    return z // Return final data.
+}
+```
+
+Functions can be accessed by code in the same or smaller scope but cannot be accessed by a higher scope.
+```js
+run() // TypeError: run is not a function
+
+{ // These brackets define a new scope.
+  function run() { // Function is defined here.
+    console.log(`HI`) // Function's task.
+  }
+
+  run() // Successful run.
+}
+```
+The `run` function call that is out of scope of the function returns an error. 
+
+#### API fetch
+
+An API is a external service that is hosted by the service provider, the end user can access the API to get raw data. Data is usually formatted so that the end user will have a nice frontend view of their data. But since we do not need a frontend we just request the data. Doing so makes APIs fast and reliable. There are a few ways to fetch API information with JavaScript but in this case we will use the built-in WebJS `fetch` module. This module works in the following way:
+```js
+fetch("URL") // First we fetch the desired URL.
+
+    .then(result => result.json()) // Then we pull the JSON format (Object) data.
+
+    .then(data => { ... }) // Now we can modify the data however we desire.
+```
+The purpose for the `fetch().then().then()` format is because APIs are fast but not fast enough. APIs take a few MS to return data and the program has already moved on by then. There are two ways to solve this. One, use a `async`/`await` system where you wait for the data and then modify it. The problem with this way is that the entire JavaScript file would need to be made async, EX:
+```js
+(async () => {
+    let request = await fetch("URL")
+    let result = await request.json()
+    // Code logic here.
+})()
+```
+Another way to do it is by using a `.then()` statement, all the code inside the then statement will wait for the first process to finish before running. In this case the first then statement waits for the API data to be fetched, then it pulls the JSON data from the request. The second statement waits for the JSON data to be extracted from the request, it will then run whatever code exists within the block.
+
+#### HTML programming with JavaScript
+
+Just as it's possible to change element styles with JavaScript you can also change the data that an element holds
+```html
+<body>
+    <a id="item"> Hi </a>
+
+    <script>
+        let element = document.getElementById(`item`) // Fetch element.
+        element.innerHTML = `Bye` // Redefine element.
+    </script>
+</body>
+```
+When this code is run the end user will see the text `Bye` in the place of `Hi`. But it doesn't just stop at text, you can also edit the `innerHTML` field to add more HTML code inside an element. EX:
+```html
+<body>
+    <div id="image"></a>
+
+    <script>
+        let element = document.getElementById(`image`) // Fetch element.
+        element.innerHTML = `<img src="https://..." /><a> Image Description </a>` // Redefine element.
+    </script>
+</body>
+```
+This would now show the image as well as some text after inside the DIV. This is useful for dynamic data or data that needs to be updated every time a specific event happens.
+
+### Putting it all together
+
+Now lets make an HTML application that integrates everything so far. Now we head to the section-3 folder of the source code. Open the `index.html` located at [`./source/section-3/index.html`](source/section-3/index.html) and insert the following code into the body.
+```html
+<table id="data"></table>
+<script src="script.js"></script>
+```
+This defines a new table that has an ID `data`. We will use this table to show the data. The script tag imports the JavaScript since it is located in its own file. Now we need to fetch the data to put it in the table. The data we need to use is found at [hacking-with-ht.ml/homebase/apps.json](http://hacking-with-ht.ml/homebase/apps.json), so lets fetch the data located on this page. Start by opening the `script.js` file in [`./source/section-3/script.js`](source/section-3/script.js), the file should be empty so lets add the following code to fetch
+```js
+fetch("URL").then(res => res.json()).then(data => { })
+```
+This is the fetch block that was defined before, replace `URL` with the JSON applist URL. Now we get the data but we need to format it. How about making it a function so we don't need to put all the logic in the same place
+```js
+function autoFormat(data) {
+    let array = [`<tr><th>App Name</th><th>App Link</th></tr>`]
+}
+```
+Now we have an function with an array that can store the HTML data we need. Next we need code that will loop though the data and add it to the array in the proper format. Well to add to an array we can use `<Array>.push()`, and we can use one of the for loops to iterate through the `data` list and add to the `array`. In this case the for-each loop would be the fastest. Declare the loop with the following:
+```js
+// Insert inside the function.
+for (let site of data) {
+    
+}
+```
+This will iterate though the entire data array and use site as the variable. Now we an append to the array with the HTML code:
+```js
+// Insert inside the for loop.
+let htmlString = `<tr><td>${site.title}</td><td><a href="https://${site.link}" target="_blank"> Click here </a></td></tr>`
+array.push(htmlString)
+```
+Using a `${}` inside a string is only possible when using the \` quote. This set of characters acts as an escape section, anything inside the brackets will be referenced from variables and will execute code. Since site is an object with 2 properties title and link, we can access them and put them into the HTML string. Now that the array is complete and contains all the formatted data, we need to return the data back to the caller. Do this with the return statement.
+```js
+// Insert AFTER the for loop.
+return array.join(`\n`)
+```
+The join statement combines all items in an array and breaks them using the character that you pass, in this case we passed `\n` so the returned statement would be the HTML string, and the `\n` which is the newline character, and then the second string and so on. With the data returned to the caller the function's returned data needs to be put in the table. So first fetch the HTML table with it's ID and set the `innerHTML` to the returned data.
+```js
+let formattedData = autoFormat(data)
+document.getElementById(`data`).innerHTML = formattedData
+```
+
+And that's it, check if the table loads by opening/refreshing the index.html in the browser. If everything was done correct this should be the result:
+
+![Table apps](assets/table_apps.png)
+
+Clicking on the `Click here` should open the app in a new tab. The table should only have 2 columns and the list should contain a list of websites that were in the `apps.json` list.
+
 ## Guides
 These guides exist to help understand how some functions of this project work. All guides are optimized for Windows systems.
+<hr />
 
 ### How to fork a repo
 #### Updated: 06/11/2021
@@ -358,6 +560,7 @@ A simple step, but you have to make sure you are forking the correct repo.
 Click the fork button found in the top right of the page to fork the repo.
 
 ![Fork repo button](assets/fork_repo_button.png)
+<hr />
 
 ### How to clone a repo
 #### Updated: 06/11/2021
@@ -392,6 +595,7 @@ Once you have entered the folder you can clone the GitHub repo with the followin
 ```bash
 git clone https://github.com/<USER_OR_ORG>/<REPO_NAME>
 ```
+<hr />
 
 ### How to open a cloned folder in Visual Studio Code
 #### Updated: 06/11/2021
@@ -411,6 +615,7 @@ Open the file explorer in VSC by doing the following:
 In the file explorer locate and select the desired folder to open in VSC.
 
 ![Visual Studio Code open clone repo step 2](assets/visual_studio_code_open_clone_step_2.png)
+<hr />
 
 ### How to install Visual Studio Code
 #### Updated: 06/11/2021
@@ -453,6 +658,7 @@ Wait for the application to install and click next.
 Click finish to open Visual Studio Code.
 
 ![Visual Studio Code install page 7](assets/visual_studio_code_install_step_7.png)
+<hr />
 
 ### How to install GitHub Desktop
 #### Updated: 06/11/2021
@@ -465,6 +671,7 @@ Download at the [GitHub Desktop download page](https://desktop.github.com/) *(Li
 
 #### Step 2: Install
 Follow the setup wizard to install, logic, and clone desired repos.
+<hr />
 
 ### How to install GIT
 #### Updated: 06/11/2021
@@ -479,5 +686,6 @@ Download at the [GIT download page](https://git-scm.com/downloads) *(Link last u
 Follow the setup wizard to install, the only change necessary is to change the default GIT editor to VSC:
 
 ![GIT editor](assets/git_editor.png)
+<hr />
 
 ### [Back to top ⬆️](#lesson-2---understanding-what-we-are-doing)
