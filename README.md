@@ -11,7 +11,7 @@
         * ❯❯ [HTML DIVs](#html-divs)
         * ❯❯ [IDs and Classes](#ids-and-classes)
         * ❯❯ [Combining everything in Section 1](#combining-everything-in-section-1)
-    * ❯❯ [Section 2 - Make a HTML application with the usage of only HTML and JS and learning the abilites of CSS styling](#section-2)
+    * ❯❯ [Section 2 - Make a HTML application with the use of JS styling and learning the abilites of CSS styling](#section-2)
         * ❯❯ [About](#about)
         * ❯❯ [JavaScript code snippets](#javascript-code-snippets)
         * ❯❯ [Styling the elements](#styling-the-elements)
@@ -30,7 +30,7 @@
 
 ## Goals
 #### ❯ [Introduction to HTML DIVs and JavaScript.](#section-1)
-#### ❯ [Make a HTML application with the usage of only HTML and JS and learning the abilites of CSS styling.](#section-2)
+#### ❯ [Make a HTML application with the use of JS styling and learning the abilites of CSS styling.](#section-2)
 #### ❯ [Make a HTML application with a JS integration and learning the abilites of CSS styling.](#section-3)
 
 ## ⚠️ Notices
@@ -133,12 +133,12 @@ Lets make an example combining everything we have covered so far. If you have no
 ```
 If you have done everything properly the end result should look like this:
 
-![Combining everything in Section 1 - Result 1](assets/section-1-result-1.png)
+![Combining everything in Section 1 - Result 1](assets/section_1_result_1.png)
 
 Now try to make the webpage look like this:
 Note: No CSS has to be modified for these changes
 
-![Combining everything in Section 1 - Result 2](assets/section-1-result-2.png)
+![Combining everything in Section 1 - Result 2](assets/section_1_result_2.png)
 
 If you were able to do it your code should look like the following:
 ```html
@@ -329,7 +329,7 @@ document.getElementsByTagName(`html`)[0].style.color = `#C0C0C0`;
 ```
 When you open the file you will see that there is no element styling, this is something you will do with the JavaScript as the CSS has been nullified. Below is what you should see on the default file:
 
-![Styling with JavaScript - Default](assets/section-2-default.png)
+![Styling with JavaScript - Default](assets/section_2_default.png)
 
 After getting a touch on this concept practice by converting all other element styles from CSS to JavaScript. Add all your JavaScript code to the [`./source/section-2/script.js`](source/section-2/script.js) file. If you are editing multiple styles for a single element declare the element fetch to a variable and edit the styles for the element through the variable. Notice that you will mostly be using up to three fetch types.
 ```js
@@ -340,10 +340,10 @@ document.getElementsByClassName(`CLASS`) // Type: Array of Objects.
 
 If you properly get all elements re-styled in JavaScript your page should look like this:
 
-![Styling with JavaScript - Final](assets/section-2-final.png)
+![Styling with JavaScript - Final](assets/section_2_final.png)
 
 ## Guides
-These guides exist to help understand how some functions of this project work.
+These guides exist to help understand how some functions of this project work. All guides are optimized for Windows systems.
 
 ### How to fork a repo
 #### Updated: 06/11/2021
@@ -351,17 +351,66 @@ These guides exist to help understand how some functions of this project work.
 #### About: This guide will explain how to fork a repo on GitHub.
 <hr />
 
+#### Step 1: Go to the repo
+A simple step, but you have to make sure you are forking the correct repo.
+
+#### Step 2: Fork
+Click the fork button found in the top right of the page to fork the repo.
+
+![Fork repo button](assets/fork_repo_button.png)
+
 ### How to clone a repo
 #### Updated: 06/11/2021
 #### Pre-req: [GitHub Account](https://github.com/login), [GitHub Desktop](#how-to-install-github-desktop), [Visual Studio Code](#how-to-install-visual-studio-code) (Optional), [GIT](#how-to-install-git)
 #### About: This guide will explain how to clone a repo from GitHub to your local system.
 <hr />
 
+#### Step 1: Go to the repo
+A simple step, but you have to make sure you are cloning the correct repo.
+
+#### Step 2: Clone Button
+Click the clone button to open GitHub Desktop and clone it to your local system.
+
+![Clone repo button](assets/clone_repo_button.png)
+
+#### Fallback: In the case that you do not want to use GitHub Desktop but the CLI version (GIT), do the following:
+Open a new terminal window, then go to the documents folder by using the following command:
+```bash
+cd Documents
+```
+
+Inside documents if you do not have a GitHub folder make one by using the following command:
+```bash
+mkdir GitHub
+```
+else just open the folder with the command
+```bash
+cd GitHub
+```
+
+Once you have entered the folder you can clone the GitHub repo with the following command:
+```bash
+git clone https://github.com/<USER_OR_ORG>/<REPO_NAME>
+```
+
 ### How to open a cloned folder in Visual Studio Code
 #### Updated: 06/11/2021
 #### Pre-req: [Visual Studio Code](#how-to-install-visual-studio-code)
 #### About: This guide will explain how to clone a repo from GitHub to your local system.
 <hr />
+
+#### Step 1: Open Visual Studio Code
+Open Visual Studio Code in order to open the cloned repo.
+
+#### Step 2: Open the file explorer though VSC
+Open the file explorer in VSC by doing the following:
+
+![Visual Studio Code open clone repo step 1](assets/visual_studio_code_open_clone_step_1.png)
+
+#### Step 3: Find and select the desired folder
+In the file explorer locate and select the desired folder to open in VSC.
+
+![Visual Studio Code open clone repo step 2](assets/visual_studio_code_open_clone_step_2.png)
 
 ### How to install Visual Studio Code
 #### Updated: 06/11/2021
@@ -370,7 +419,7 @@ These guides exist to help understand how some functions of this project work.
 <hr />
 
 #### Step 1: Download
-Download at the [Visual Studio Code download page](https://code.visualstudio.com/download) *(Link last updated: 06/07/2021)*
+Download at the [Visual Studio Code download page](https://code.visualstudio.com/download) *(Link last updated: 06/11/2021)*
 
 ![Visual Studio Code dowload page visual](assets/visual_studio_code_download_page.png)
 
@@ -411,10 +460,24 @@ Click finish to open Visual Studio Code.
 #### About: This guide will explain how to install the GitHub Desktop application.
 <hr />
 
+#### Step 1: Download
+Download at the [GitHub Desktop download page](https://desktop.github.com/) *(Link last updated: 06/11/2021)*
+
+#### Step 2: Install
+Follow the setup wizard to install, logic, and clone desired repos.
+
 ### How to install GIT
 #### Updated: 06/11/2021
 #### Pre-req: None
 #### About: This guide will explain how to install the GIT service to your system.
 <hr />
 
-[Back to top ⬆️](#lesson-2---understanding-what-we-are-doing)
+#### Step 1: Download
+Download at the [GIT download page](https://git-scm.com/downloads) *(Link last updated: 06/11/2021)*
+
+#### Step 2: Install
+Follow the setup wizard to install, the only change necessary is to change the default GIT editor to VSC:
+
+![GIT editor](assets/git_editor.png)
+
+### [Back to top ⬆️](#lesson-2---understanding-what-we-are-doing)
