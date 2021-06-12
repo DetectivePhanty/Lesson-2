@@ -3,13 +3,19 @@
  * It is made for styling the index page.
  */
 
+/* All element styles */
+
 * {
     color: #C0C0C0;
 }
 
+/* Body tag styles. */
+
 body {
     background-color: #111111;
 }
+
+/* Table cell styles. */
 
 body #data th, body #data td {
     padding: 10px;
@@ -17,9 +23,13 @@ body #data th, body #data td {
     border-radius: 5px;
 }
 
+/* Table heading styles. */
+
 body #data th {
     color: #E18499;
 }
+
+/* Table data link styles. */
 
 body #data td a {
     text-decoration: none;
