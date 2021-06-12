@@ -18,6 +18,11 @@
         * ❯❯ [Styling with CSS](#styling-with-css)
         * ❯❯ [Styling with JavaScript](#styling-with-javascript)
     * ❯❯ [Section 3 - Make a HTML application with a JS integration](#section-3)
+        * ❯❯ [HTML Tables & Grids](#html-tables--grids)
+        * ❯❯ [JavaScript functions](#javascript-functions)
+        * ❯❯ [API fetch](#api-fetch)
+        * ❯❯ [HTML programming with JavaScript](#html-programming-with-javascript)
+        * ❯❯ [Putting it all together](#putting-it-all-together)
     * ❯❯ [Guides](#guides)
         * ❯❯ [How to fork a repo](#how-to-fork-a-repo)
         * ❯❯ [How to clone a repo](#how-to-clone-a-repo)
@@ -496,7 +501,7 @@ When this code is run the end user will see the text `Bye` in the place of `Hi`.
 ```
 This would now show the image as well as some text after inside the DIV. This is useful for dynamic data or data that needs to be updated every time a specific event happens.
 
-### Putting it all together
+#### Putting it all together
 
 Now lets make an HTML application that integrates everything so far. Now we head to the section-3 folder of the source code. Open the `index.html` located at [`./source/section-3/index.html`](source/section-3/index.html) and insert the following code into the body.
 ```html
